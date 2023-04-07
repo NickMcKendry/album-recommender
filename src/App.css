@@ -6,50 +6,52 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f2f2f2;
+  background-color: #f8f9fa;
+  color: #343a40;
 }
 
 .App {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 2rem;
 }
 
 h1 {
-  font-size: 48px;
-  color: #4b4b4b;
-  margin-bottom: 30px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 form {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
 }
 
-input[type="text"] {
-  width: 400px;
-  padding: 10px;
-  font-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  color: #495057;
 }
 
-button[type="submit"] {
-  margin-left: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #3f3f3f;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+button {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1.125rem;
+  margin-left: 1rem;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #585858;
+button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
 }
 
 .album-container {
@@ -64,6 +66,9 @@ button[type="submit"]:hover {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s;
+  display: inline-block;
+  margin: 0 20px 20px;
+  perspective: 1000px;
 }
 
 .album:hover {
@@ -98,4 +103,75 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.album {
+  position: relative;
+  display: inline-block;
+  margin: 0 20px 20px;
+  perspective: 1000px;
+}
+
+.album img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: rotate(-5deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.album:hover img {
+  transform: rotateY(180deg) rotate(-5deg);
+}
+
+.album h3,
+.album p {
+  margin: 10px 0;
+  color: #4b4b4b;
+}
+
+.App {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+.album {
+  width: 300px;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.14);
+  border-radius: 0.25rem;
+}
+
+.album img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.album:hover img {
+  transform: rotateY(180deg) rotate(-5deg);
+}
+
+.album h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.album p {
+  font-size: 1.125rem;
+  color: #6c757d;
+}
+
+.AlbumList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

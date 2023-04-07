@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import logo from "./logo.svg";
 import "./App.css";
 
 import AlbumList from "./Components/AlbumList";
@@ -11,9 +10,11 @@ function App() {
   const [albums, setAlbums] = useState([]);
   const handleSearch = async (query) => {
     const albumResults = await searchAlbums(query);
+    console.log("Album results:", albumResults); // Add this line to check the results
     setAlbums(albumResults);
   };
 
+  console.log(albums);
   return (
     <div className="App">
       <h1>Album Recommender</h1>
