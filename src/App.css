@@ -1,38 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
+}
+
 .App {
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 48px;
+  color: #4b4b4b;
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="text"] {
+  width: 400px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button[type="submit"] {
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #3f3f3f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #585858;
+}
+
+.album-container {
+  display: flex;
+  justify-content: space-evenly;
+  perspective: 1500px;
+}
+
+.album {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.album:hover {
+  transform: rotateY(180deg);
+}
+
+.record-cover {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.record {
+  width: 230px;
+  height: 230px;
+  background-color: black;
+  position: absolute;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-label {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

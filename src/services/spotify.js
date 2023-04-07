@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const getAccessToken = async () => {
-  // Replace the following with your own Spotify API credentials
-  const clientId = "9820a4403a664c5086bd15b29e2e6a7c";
-  const clientSecret = "e1e92cf6f93e44e3947ad46ee4b9e15f";
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
+const getAccessToken = async () => {
   const response = await axios.post(
     "https://accounts.spotify.com/api/token",
     new URLSearchParams({ grant_type: "client_credentials" }),
@@ -30,7 +29,9 @@ export const searchAlbums = async (query) => {
       q: query,
       type: "album",
       market: "US",
-      limit: 10,
+      release_date: "1960-01-01,1979-12-31",
+      release_date_precision: "year",
+      limit: 2,
     },
   });
 
